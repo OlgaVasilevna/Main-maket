@@ -1,3 +1,32 @@
+@font-face{
+    font-family: 'montserrat';
+    src: url(../fonts/montserrat/montserrat-regular.ttf);     
+}
+@font-face{
+    font-family: 'montserrat-light';
+    src: url(../fonts/montserrat/montserrat-light.ttf);     
+}
+@font-face{
+    font-family: 'raleway-light';
+    src: url(../fonts/raleway/raleway-light.ttf); 
+}
+@font-face{
+    font-family: 'raleway';
+    src: url(../fonts/raleway/raleway-regular.ttf); 
+}
+@font-face{
+    font-family: 'raleway-bold';
+    src: url(../fonts/raleway/raleway-bold.ttf); 
+}
+@font-face{
+    font-family: 'raleway-semibold';
+    src: url(../fonts/raleway/raleway-semibold.ttf); 
+}
+@font-face{
+    font-family: 'raleway-extrabold';
+     src: url(../fonts/raleway/raleway-extrabold.ttf);  
+}
+
 body{
     width: 1920px;
     margin: 0 auto;
@@ -13,33 +42,47 @@ body{
     min-height: 1024px;
     position: relative;
     box-sizing: border-box;
+    padding: 40px;
 }
 .main-header{
     width: 100%;
     min-height:100px;
     background-color: transparent;
 }
-.logo-link{
-    text-decoration:none; 
+.link-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  text-decoration: none;
+  background-color: transparent;
+  margin: 0 0 0 336px;
 }
-.main-header-logo-img{
-    display: block;
-    top: 40px;
-    left: 376px;
-    position: absolute;
+
+.link-logo-svg {
+  fill: #fff;
 }
-.main-header-logo-title{
-color: #ffffff;
-font-family: "Raleway";
-font-size: 34px;
-font-weight: 400;
-letter-spacing: -1.36px;
-display: block;
-width: 115px;
-min-height:26px;
-position: absolute;
-top: 55px;
-left: 442px;
+
+.link-logo-txt {
+  color: #fff;
+  font-size: 28px;
+  font-family: 'raleway' , 'arial';
+}
+
+.link-logo:hover .link-logo-svg {
+  fill: #c7b299;
+}
+
+.link-logo:hover .link-logo-txt {
+  color: #c7b299;
+}
+
+.link-logo:active .link-logo-svg {
+  fill: #fff;
+}
+
+.link-logo:active .link-logo-txt {
+  color: #fff;
 }
 .main-header-menu{
     width: 680px;
@@ -54,7 +97,7 @@ left: 442px;
 }
 .header-menu-list-item{
 color: #ffffff;
-font-family: 'Montserrat';
+font-family: 'montserrat', 'arial';
 font-size: 14px;
 font-weight: 300;
 display: inline-block;
@@ -96,7 +139,7 @@ margin: 0 30px 0 0;
     border:1px solid #fff;
     color: #fff;
     border-radius: 5px;
-    font-family:"Raleway"; 
+    font-family:"raleway", 'arial'; 
 }
 .main-slidedeck-title{
     width: 590px;
@@ -107,7 +150,7 @@ margin: 0 30px 0 0;
 }
 .main-slidedeck-title1{
  color: #ffffff;
- font-family: 'Raleway';
+ font-family: 'raleway','arial';
  font-size: 36px;
  font-weight: 500;
  margin: 0;
@@ -116,18 +159,18 @@ margin: 0 30px 0 0;
 }
 .main-slidedeck-title2{
  color: #ffffff;
- font-family: 'Raleway';
+ font-family: 'raleway-extrabold','arial';
+ font-weight: 400;
  font-size: 52px;
- font-weight: bold;
  margin: 0;
  padding: 5px 0 0 0;
  text-align: center;   
 }
 .main-slidedeck-title-text{
  margin: 0;
- padding: 5px 11px 52px 11px;
+ padding: 5px 7px 52px 7px;
  color: #ffffff;
- font-family: "Montserrat";
+ font-family: "montserrat", 'arial';
  font-size: 16px;
  font-weight: 300;
  line-height: 24px;
@@ -137,27 +180,25 @@ margin: 0 30px 0 0;
 .main-slidedeck-button{
 display: block;
 width: 170px;
-height: 53px;
-box-shadow: inset 0 -3px 0 #736357;
-background-color: #998675;   
+min-height: 48px;
+border-radius:5px;
+background-color: #998675; 
+border-bottom: 5px solid #736357;    
 margin: 0 auto ;  
-border-radius:3px; 
-appearance:button;
--webkit-appearance:button;
--moz-appearance:button;
 cursor: pointer;
 color: #ffffff;
-font-family: "Raleway";
+font-family: "raleway-bold", 'arial';
+font-weight: 400;
 font-size: 14px;
-font-weight:bold;
-line-height: 53px;
+line-height: 48px;
 text-transform: uppercase;
 text-align: center;
-text-decoration: none;   
+text-decoration: none; 
 }
 .main-slidedeck-button:hover{
- background-color: #333639;
+ background-color: #fff;
  color:#998675;
+    
 }
 .main-slidedeck-button:active{
  background-color: #998675;
@@ -189,20 +230,187 @@ text-decoration: none;
    background-color:rgba(0,0,0,0.3);   
 }
 .main-slidedeck-circles{
-    width: 140px;
-    position: absolute;
-    top: 971px;
-    left: 909px;
+ width: 120px;
+ position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  left: 909px;
+  top: 971px;
 } 
-.main-slidedeck-circle:checked:after{
-    display: block;
+.main-slidedeck-circle{
+ display: block;
+  width: 10px;
+  min-height: 10px;
+  margin: 0 10px 0 0;
+  background-color: #8e8e8e;
+  border-radius: 100%;
+  border: 2px solid transparent;
+}
+.main-slidedeck-circle:hover {
+  border: 2px solid #8e8e8e;
+  background-color: transparent;
+  transform: scale(1.3);   
+}
+#features{
+    width: 100%;
+    padding:80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+}
+#features:after:{
     content: "";
-    width: 12px;
-    height: 12px;
-    background-color:#232328;
-    border: 2px solid #d3c1ad;
-    border-radius: 100%;
+    width: 100%;
+}
+.features-element {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 266px;
+  margin: 0 33px 0 0;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}   
+.features-element:after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #f1eee9;
+}
+
+.features-element:hover .features-icon {
+  fill: #c8b39b;
+}
+
+.features-element:hover .features-title {
+  color: #c8b39b;
+}
+
+.features-element:hover:after {
+  background-color: #c8b39b;
+}
+
+.features-icon {
+  display: block;
+  fill: #555555;
+  margin: 0 0 29px 0;
+}
+
+.features-title {
+  width: 100%;
+  margin: 0 0 19px 0;
+  text-align: center;
+  color: #555555;
+  font-family: "raleway-bold", 'aral';
+  font-weight: 400;
+  font-size: 22px;  
+}
+
+.features-txt {
+  margin: 0 0 30px 0;
+  text-align: center;
+  color: #8c8c8c;
+  font-family: "montserrat-light", 'areal';
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 24px;
+}
+.features-ideas{
+    width: 100%;
+    background-color: #fbfaf8;
+    text-align: center;
+    padding: 80px 0 0 0;
     position: relative;
-    bottom: 3px;
-    left: -3px;
+    
+}
+.features-ideas-title{
+margin: 0 0 24px 0;
+color: #555555;
+font-family: "raleway-semibold", 'areal';
+font-weight: 400;
+font-size: 30px;  
+}
+.features-ideas-text{
+width: 757px;
+margin: 0 0 40px 580px;
+color: #8c8c8c;
+font-family: 'montserrat-light', 'areal';
+font-weight: 300;
+font-size: 15px;
+line-height: 28px;
+}
+.features-ideas-img{
+    width:1230px;
+    position: relative;
+    min-height: 482px;
+    margin: 0 auto;
+    background-image: url('../img/browser-center.png'),
+                      url('../img/browser-left.png'),
+                      url('../img/browser-right.png');
+    background-size: 770px 482px, 770px 400px, 770px 400px;
+    background-repeat: no-repeat;
+    background-position: center, left bottom,right bottom;  
+}
+.advertising{
+    width: 100%;
+    padding: 48px 0;
+    background-color: #f4f5f8;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+}
+.advertising-title{
+    margin: 0 470px 8px 376px;
+    color: #ffffff;
+    font-family: 'raleway', "areal";
+    font-weight: 400;
+    font-size: 28px;
+    float: left;
+}
+.advertising-title-1world{
+color: #c7b299;
+}
+.advertising-text{
+    margin: 0 544px 0 376px;
+    color: #615855;
+    font-family: 'montserrat-light', 'areal';
+    font-weight: 300;
+    font-size: 18px;
+    clear: both;
+    float: left
+}
+.advertising-buttom{
+    display: flex;
+    width: 170px;
+    min-height: 50px;
+    text-decoration: none;
+    box-shadow: inset 0 -3px 0 #736357;
+    border-radius: 3px;
+    background-color: #998675;
+    justify-content: center;
+    align-items: center;
+}
+.advertising-buttom-legend{
+    display: block;
+    color: #ffffff;
+    font-family: "raleway-extrabold", 'areal';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+.advertising-buttom:hover{
+    background-color: #fff;
+}
+.advertising-buttom:active{
+  background-color:#736357;  
+}
+.advertising-buttom-legend:hover{
+   color:#736357;  
+}
+.advertising-buttom-legend:active{
+    color: #fff;
 }
